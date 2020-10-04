@@ -38,7 +38,7 @@
   </head>
   <body>
     {% set navPages = collections.all | eleventyNavigation %}
-    {# {{ navPages | dump | safe}} #}
+    {{ navPages | dump | safe}}
 
     <header>
       <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
@@ -47,14 +47,14 @@
       <ul class="nav">
         {%- for entry in navPages %}
           {%- if entry.children | length != 0 -%} {# If this has children, make it a menu #}
-            <li class="menu-button">{{ entry.title }}</li>
+            <button type="button" class="menu-button">{{ entry.title }}</button>
             <div class="menu-content">
               {%- for child in entry.children -%}
-                <li><a href="{{ child.url | url }}">{{ child.title }}</a></li>
+                <li><a href="{{ child.url | url }}"{% if child.newTab %} target="_blank"{% endif %}>{{ child.title }}</a></li>
               {%- endfor %}
             </div>
           {%- else -%}
-            <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+            <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}"{% if entry.newTab %} target="_blank"{% endif %}>{{ entry.title }}</a></li>
           {%- endif -%}
 
         {%- endfor %}
