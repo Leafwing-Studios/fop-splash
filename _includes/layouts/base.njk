@@ -38,7 +38,7 @@
   </head>
   <body>
     {% set navPages = collections.all | eleventyNavigation %}
-    {{ navPages | dump | safe}}
+    {# {{ navPages | dump | safe}} #}
 
     <header>
       <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
@@ -46,8 +46,8 @@
       {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
       <ul class="nav">
         {%- for entry in navPages %}
-          {%- if entry.children | length != 0 -%}
-            <button type="button" class="menu-button">{{ entry.title }}</button>
+          {%- if entry.children | length != 0 -%} {# If this has children, make it a menu #}
+            <li class="menu-button">{{ entry.title }}</li>
             <div class="menu-content">
               {%- for child in entry.children -%}
                 <li><a href="{{ child.url | url }}">{{ child.title }}</a></li>

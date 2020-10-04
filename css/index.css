@@ -230,10 +230,6 @@ a[href].direct-link:focus:visited,
   display: inline-block;
   margin-right: 1em;
   cursor: pointer;
-  border: none;
-  outline: none;
-  background-color: var(--white);
-  font-size: 15px;
 }
 
 .menu-active, .menu-button:hover {

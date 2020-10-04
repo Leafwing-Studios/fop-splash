@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  key: Core Rules
+  key: Hackers's Guide
   parent: Explore
   url: http://rules.fontsofpower.com/#/
-  order: 5
+  order: 8
 permalink: false
 ---

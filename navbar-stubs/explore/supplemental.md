@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  key: Core Rules
+  key: Supplemental Rules
   parent: Explore
   url: http://rules.fontsofpower.com/#/
-  order: 5
+  order: 6
 permalink: false
 ---
