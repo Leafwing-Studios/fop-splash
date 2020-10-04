@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() { // required so this runs after page load when the dom elements actually exist
+        var buttons = document.getElementsByClassName("menu-button");
+
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].addEventListener("click", function() {
+            this.classList.toggle("menu-active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+      })
+    </script>
   </head>
   <body>
     {% set navPages = collections.all | eleventyNavigation %}
@@ -24,6 +42,12 @@
         {%- endfor %}
       </ul>
     </header>
+
+    <button type="button" class="menu-button">Open Menu</button>
+    <div class="menu-content">
+      <p>This is some text!</p>
+      <a href="https://ws.fopsrd.com/#/">Worldspeaker's Guide</a>
+    </div>
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
       {{ content | safe }}
