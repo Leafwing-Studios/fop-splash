@@ -227,25 +227,31 @@ a[href].direct-link:focus:visited,
 
 /* Menu stuff */
 .menu-button {
-  background-color: #777;
-  color: white;
+  display: inline-block;
+  margin-right: 1em;
   cursor: pointer;
-  padding: 18px;
   border: none;
-  text-align: left;
   outline: none;
+  background-color: var(--white);
   font-size: 15px;
-  margin-top: 20px;
 }
 
 .menu-active, .menu-button:hover {
-  background-color: #555;
+  text-decoration: underline;
 }
 
 .menu-content {
+  position: absolute;
+  margin-left: 120px;
+  margin-top: 10px;
   padding: 0 18px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
+}
+
+/* fix for hover underline for menu items in the nav bar */
+.menu-content a[href]:not(:hover) { 
+  text-decoration: none;
 }
