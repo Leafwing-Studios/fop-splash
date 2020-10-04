@@ -1,0 +1,20 @@
+{
+  "title": "Leafwing Blog",
+  "url": "https://example.com/",
+  "description": "We make games, and some of them are even good!",
+  "feed": {
+    "subtitle": "This is the subtitle from _data/metadata.json",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://example.com/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://example.com/feed/feed.json"
+  },
+  "author": {
+    "name": "Rose Peck",
+    "email": "plof27@gaming-legend-69.com",
+    "url": "https://sixfold.plof27.com/"
+  }
+}
